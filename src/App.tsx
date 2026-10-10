@@ -101,11 +101,11 @@ function Arrow() {
 
 function ProjectVisual({ variant }: { variant: string }) {
   const images: Record<string, string> = {
-    meeting: "/intellimeet_mockup_1791621635666.jpg",
-    clips: "/clipgenius_mockup_1791621647426.jpg",
-    traffic: "/roadguard_mockup_1791621659994.jpg",
-    data: "/pricepulse_mockup_1791621672129.jpg",
-    outreach: "/outreach_mockup_1791621683206.jpg",
+    meeting: intelliMeetImage,
+    clips: clipGeniusImage,
+    traffic: roadGuardImage,
+    data: pricePulseImage,
+    outreach: outreachImage,
   };
 
   const bgs: Record<string, string> = {

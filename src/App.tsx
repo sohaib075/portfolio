@@ -1,4 +1,10 @@
 import { useState } from "react"
+import portraitImage from "./portrait.jpg"
+import clipGeniusImage from "./clipgenius_mockup_1791621647426.jpg"
+import intelliMeetImage from "./intellimeet_mockup_1791621635666.jpg"
+import outreachImage from "./outreach_mockup_1791621683206.jpg"
+import pricePulseImage from "./pricepulse_mockup_1791621672129.jpg"
+import roadGuardImage from "./roadguard_mockup_1791621659994.jpg"
 
 const projects = [
   {
@@ -200,7 +206,7 @@ export default function App() {
               <div className="absolute inset-0 -z-10 scale-[1.5] rounded-full bg-[#c9ff45] blur-3xl opacity-60 md:scale-[1.8]" />
               <div className="h-full w-full overflow-hidden rounded-full border-[6px] border-[#f5f1e8] shadow-2xl ring-1 ring-black/5">
                 <img
-                  src="/portrait.jpg"
+                  src={portraitImage}
                   alt="Muhammad Sohaib"
                   className="h-full w-full object-cover"
                 />

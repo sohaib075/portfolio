@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Instrument Serif", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f4f1e8;
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #d9ff43;
+  color: #171714;
+}
+
+.font-display {
+  font-family: "Instrument Serif", serif;
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.visual-shell {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  transition: transform 400ms ease;
+}
+
+.group:hover .visual-shell {
+  transform: translateY(-0.35rem);
+}
+
+.mock-window {
+  display: flex;
+  width: calc(100% - 3rem);
+  height: calc(100% - 3rem);
+  margin: 1.5rem;
+  padding: 1.25rem;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #f5f1e8;
+}
+
+.mock-window i {
+  display: block;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: #15151b;
+  opacity: 0.25;
+}
+
+.mock-label {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.mock-window .grid > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mock-window b {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.65rem;
+  font-size: 0.5rem;
+  color: white;
+  opacity: 0.7;
+}
+
+.avatar {
+  display: flex;
+  width: 3.5rem;
+  height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 16%);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.road-line {
+  position: absolute;
+  top: -10%;
+  width: 1px;
+  height: 120%;
+  background: repeating-linear-gradient(to bottom, transparent 0 1rem, rgb(255 255 255 / 25%) 1rem 2rem);
+  transform: rotate(8deg);
+}
+
+.detect-box {
+  position: absolute;
+  border: 1px solid #ff6846;
+}
+
+.detect-box span {
+  position: absolute;
+  top: -1rem;
+  left: -1px;
+  padding: 0.15rem 0.3rem;
+  background: #ff6846;
+  color: white;
+  font-size: 0.45rem;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .mock-window {
+    width: calc(100% - 5rem);
+    height: calc(100% - 5rem);
+    margin: 2.5rem;
+    padding: 1.75rem;
+  }
+}
+
+.nav-link {
+  position: relative;
+  width: fit-content;
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.25rem;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.marquee {
+  animation: marquee 28s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
